@@ -1,0 +1,22 @@
+.container
+  .row
+    .col.l2.s0
+      == render 'layouts/sidebar'
+    .col.l10.s12
+      dl
+        dt
+          h5 研究者
+        dd = @laboratory.name
+        dt
+          h5 所属
+        dd = @laboratory.belong
+        dt
+          h5 活動内容（科研費）
+        dd
+          ul
+            - @laboratory.projects.each do |project|
+              li #{project.name} (#{project.fund_sen_yen} 千円)
+        dt
+          h5 入試科目
+        dt
+          h5 定員

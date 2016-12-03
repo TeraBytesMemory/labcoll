@@ -1,0 +1,8 @@
+ul.collapsible data-collapsible="accordion"
+  - load_sidebar_content.each do |research_branch|
+    li
+      .collapsible-header = research_branch.name
+      .collapsible-body
+        - research_branch.researches.each do |research|
+          .collection
+            a.collection-item href="/research/#{research.id}" = research.specific

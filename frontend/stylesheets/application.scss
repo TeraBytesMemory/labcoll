@@ -1,0 +1,18 @@
+@import '../../node_modules/materialize-css/sass/components/_color.scss';
+$primary-color: color("teal", "lighten-2") !default;
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+
+
+.card {
+  width: 240px;
+  height: 360px;
+  margin: 8px;
+}
+
+.card-image {
+  overflow: hidden;
+  img {
+    width: auto !important;
+    height: 240px;
+  }
+}
