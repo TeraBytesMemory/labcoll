@@ -5,10 +5,11 @@
     .col.l10.m8.s12
       h5 = @research.specific
       .cards data-masonry='{ "itemSelector": ".card" }'
-        - @research.projects.each do |project|
+        - @projects.each do |project|
           .card.hoverable
             .card-image
               = image_tag project.laboratory.imagePath, :width => 200
             .card-content
               a href="/abstract/#{project.laboratory_id}"
                 | #{project.laboratory.name} - #{project.name}
+      = paginate @projects

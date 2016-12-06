@@ -16,3 +16,7 @@ $primary-color: color("teal", "lighten-2") !default;
     height: 240px;
   }
 }
+
+html, body {
+  height: 100%;
+}
