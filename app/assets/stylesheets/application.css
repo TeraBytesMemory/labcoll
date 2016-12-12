@@ -3570,7 +3570,7 @@ ul:not(.browser-default) {
     list-style-type: none; }
 
 a {
-  color: #039be5;
+  color: #212121;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent; }
 
@@ -8036,3 +8036,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 html, body {
   height: 100%; }
+
+.collapsible .active {
+  background-color: #fdd835; }
+
+a:hover {
+  color: #fdd835; }

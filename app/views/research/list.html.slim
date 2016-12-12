@@ -7,9 +7,25 @@
       .cards data-masonry='{ "itemSelector": ".card" }'
         - @projects.each do |project|
           .card.hoverable
-            .card-image
-              = image_tag project.laboratory.imagePath, :width => 200
+            .card-image.waves-effect.waves-block.waves-light
+              = image_tag project.laboratory.imagePath, :width => 200, :class => "activator"
             .card-content
               a href="/abstract/#{project.laboratory_id}"
                 | #{project.laboratory.name} - #{project.name}
+            .card-reveal
+              span.card-title
+                i.material-icons.right close
+              dl
+                dt
+                  研究者
+                dd = project.laboratory.name
+                dt
+                  所属
+                dd = project.laboratory.belong
+                dt
+                  活動内容（科研費）
+                dd
+                  ul
+                    - project.laboratory.projects.each do |project|
+                      li #{project.name} (#{project.fund_sen_yen} 千円)
       = paginate @projects
