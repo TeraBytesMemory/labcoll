@@ -6,14 +6,7 @@
     == image_tag "parallax.jpg", :alt => "parallax"
 .container
   .row
-    .col.l2.m4.hide-on-small-only
+    .col.l3.m4.hide-on-small-only
       == render 'layouts/sidebar'
-    .col.l10.m8.s12
-      .cards data-masonry='{ "itemSelector": ".card" }'
-        - @projects.each do |project|
-          .card.small.hoverable
-            .card-image
-              = image_tag project.laboratory.imagePath
-            .card-content
-              a href="/abstract/#{project.laboratory_id}"
-                | #{project.laboratory.name} - #{project.name}
+    .col.l9.m8.s12
+      == render partial: "research/project_list", locales: { projects: @projects }

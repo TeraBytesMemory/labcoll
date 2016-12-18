@@ -8025,14 +8025,18 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .card {
   width: 240px;
-  height: 360px;
+  height: 220px;
   margin: 8px; }
+  .card .card-image {
+    overflow: hidden; }
+    .card .card-image img {
+      width: auto !important;
+      height: 120px; }
+  .card .card-content {
+    padding-top: 4px; }
 
-.card-image {
-  overflow: hidden; }
-  .card-image img {
-    width: auto !important;
-    height: 240px; }
+.modal h5 {
+  color: #4db6ac; }
 
 html, body {
   height: 100%; }
@@ -8040,5 +8044,5 @@ html, body {
 .collapsible .active {
   background-color: #fdd835; }
 
-a:hover {
+a:not(.btn):not(.btn-large):hover {
   color: #fdd835; }

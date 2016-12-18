@@ -1,0 +1,20 @@
+.cards data-masonry='{ "itemSelector": ".card" }'
+  - @projects.each do |project|
+    .card.hoverable
+      .card-image
+        = image_tag project.laboratory.imagePath
+      .card-content
+        a href="#modal-#{project.laboratory_id}"
+          | #{project.laboratory.name} - #{project.name}
+    .modal id="modal-#{project.laboratory_id}"
+      .modal-content
+        a.modal-action.modal-close href="#!"
+          i.material-icons.right close
+        h5  研究者
+        p = project.laboratory.name
+        h5 所属
+        p = project.laboratory.belong
+        h5 活動内容（科研費）
+        ul
+          - project.laboratory.projects.each do |project|
+            li #{project.name} (#{project.fund_sen_yen} 千円)
