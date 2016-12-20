@@ -1,22 +1,25 @@
 .container
   .row
-    .col.l2.s0
+    .col.l3.s0
       == render 'layouts/sidebar'
-    .col.l10.s12
-      dl
-        dt
-          h5 研究者
-        dd = @laboratory.name
-        dt
-          h5 所属
-        dd = @laboratory.belong
-        dt
-          h5 活動内容（科研費）
-        dd
-          ul
-            - @laboratory.projects.each do |project|
-              li #{project.name} (#{project.fund_sen_yen} 千円)
-        dt
-          h5 入試科目
-        dt
-          h5 定員
+    .col.l9.s12
+      .center
+        = image_tag @laboratory.imagePath, :width => 400
+
+      h5 所属
+      p = @laboratory.belong
+      h5 研究室名
+      p = @laboratory.office
+      h5 研究者名（抜粋）
+      p = @laboratory.name
+      hr
+      h5 研究内容
+      p ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります
+      /
+        ul
+          - @laboratory.projects.each do |project|
+            li #{project.name} (#{project.fund_sen_yen} 千円)
+      h5 研究室の特色
+      p ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります
+      h5 進路
+      p ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります

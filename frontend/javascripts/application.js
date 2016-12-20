@@ -9,4 +9,5 @@ $ = window.$ = require("jquery");
 $(document).ready(() => {
     $('.parallax').parallax();
     $(".button-collapse").sideNav();
+    $('.modal').modal();
 });

@@ -1,8 +1,6 @@
 class Research < ActiveRecord::Base
-  has_many :laboratories
-
-  has_many :researches_projects
-  has_many :projects, ->{order('id')}, :through => :researches_projects
+  has_many :researches_laboratories
+  has_many :laboratories, :through => :researches_laboratories
 
   belongs_to :research_branch
 
@@ -10,4 +8,5 @@ class Research < ActiveRecord::Base
     research_branch = ResearchBranch.find(self.research_branch)
     research_branch.researches
   end
+
 end

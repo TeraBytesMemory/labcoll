@@ -1,20 +1,27 @@
 .cards data-masonry='{ "itemSelector": ".card" }'
-  - @projects.each do |project|
+  - @laboratories.each do |laboratory|
     .card.hoverable
       .card-image
-        = image_tag project.laboratory.imagePath
+        = image_tag laboratory.imagePath
       .card-content
-        a href="#modal-#{project.laboratory_id}"
-          | #{project.laboratory.name} - #{project.name}
-    .modal id="modal-#{project.laboratory_id}"
+        a href="#modal-#{laboratory.id}"
+          p = laboratory.belong
+          p = laboratory.office
+    .modal id="modal-#{laboratory.id}"
       .modal-content
         a.modal-action.modal-close href="#!"
           i.material-icons.right close
-        h5  研究者
-        p = project.laboratory.name
         h5 所属
-        p = project.laboratory.belong
-        h5 活動内容（科研費）
-        ul
-          - project.laboratory.projects.each do |project|
-            li #{project.name} (#{project.fund_sen_yen} 千円)
+        p = laboratory.belong
+        h5 研究室名
+        p = laboratory.office
+        h5  研究者名（抜粋）
+        p = laboratory.name
+        h5 キーワード
+        p コンピュータビジョン/画像認識/映像認識/機械学習/ディープラーニング
+        a.btn.waves-effect.waves-light href="/abstract/#{laboratory.id}" インタビューはこちら
+        /
+          h5 活動内容（科研費）
+          ul
+            - laboratory.projects.each do |project|
+              li #{project.name} (#{project.fund_sen_yen} 千円)

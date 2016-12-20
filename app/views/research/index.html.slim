@@ -1,7 +1,7 @@
 .parallax-container
   .container
     .row.center
-      h1.white-text LaboCollection
+      h1.white-text LabCollection
   .parallax
     == image_tag "parallax.jpg", :alt => "parallax"
 .container
@@ -9,4 +9,4 @@
     .col.l3.m4.hide-on-small-only
       == render 'layouts/sidebar'
     .col.l9.m8.s12
-      == render partial: "research/project_list", locales: { projects: @projects }
+      == render partial: "research/project_list", locales: { laboratories: @laboratories }

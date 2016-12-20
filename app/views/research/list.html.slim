@@ -7,9 +7,9 @@
 
       p
         - @research.research_brothers.each do |brother|
-          a.btn href="#{brother.id}" = brother.specific
+          a.btn.waves-effect.waves-light href="#{brother.id}" = brother.specific
 
       p ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります
 
-      = render partial: "research/project_list", locales: { projects: @projects }
-      = paginate @projects
+      = render partial: "research/project_list", locales: { laboratories: @laboratories }
+      = paginate @laboratories

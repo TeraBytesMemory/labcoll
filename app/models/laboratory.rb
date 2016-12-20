@@ -1,10 +1,11 @@
 class Laboratory < ActiveRecord::Base
   has_many :projects
 
-  belongs_to :researches
+  has_many :researches_laboratories
+  has_many :researches, :through => :researches_laboratories
 
   def imagePath
     suffix = self.image ? self.image : 'no_image'
-    'labos/' + suffix + '.jpg'
+    'labs/' + suffix + '.jpg'
   end
 end

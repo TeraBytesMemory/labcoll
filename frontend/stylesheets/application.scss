@@ -1,22 +1,43 @@
 @import '../../node_modules/materialize-css/sass/components/_color.scss';
 $primary-color: color("teal", "lighten-2") !default;
+$link-color: color("grey", "darken-4") !default;
 @import '../../node_modules/materialize-css/sass/materialize.scss';
 
 
 .card {
   width: 240px;
-  height: 360px;
+  height: 320px;
   margin: 8px;
+
+  .card-image {
+    overflow: hidden;
+    img {
+      width: auto !important;
+      height: 160px;
+    }
+  }
+
+  .card-content {
+    padding-top: 4px;
+
+    p {
+      margin-top: 4px;
+    }
+  }
 }
 
-.card-image {
-  overflow: hidden;
-  img {
-    width: auto !important;
-    height: 240px;
-  }
+h5 {
+  color: $primary-color;
 }
 
 html, body {
   height: 100%;
+}
+
+.collapsible .active {
+  background-color: color("yellow", "darken-1");
+}
+
+a:not(.btn):hover {
+  color: color("yellow", "darken-1")
 }

@@ -8025,17 +8025,19 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .card {
   width: 240px;
-  height: 220px;
+  height: 320px;
   margin: 8px; }
   .card .card-image {
     overflow: hidden; }
     .card .card-image img {
       width: auto !important;
-      height: 120px; }
+      height: 160px; }
   .card .card-content {
     padding-top: 4px; }
+    .card .card-content p {
+      margin-top: 4px; }
 
-.modal h5 {
+h5 {
   color: #4db6ac; }
 
 html, body {
