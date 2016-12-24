@@ -8025,7 +8025,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .card {
   width: 240px;
-  height: 320px;
+  height: 300px;
   margin: 8px; }
   .card .card-image {
     overflow: hidden; }
