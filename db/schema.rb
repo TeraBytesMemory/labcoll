@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161224050026) do
+ActiveRecord::Schema.define(version: 20161225080034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,13 +77,16 @@ ActiveRecord::Schema.define(version: 20161224050026) do
     t.datetime "updated_at",                          null: false
     t.string   "provider"
     t.string   "uid"
+    t.integer  "laboratory_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["laboratory_id"], name: "index_users_on_laboratory_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "projects", "laboratories"
   add_foreign_key "researches", "research_branches"
   add_foreign_key "researches_laboratories", "laboratories"
   add_foreign_key "researches_laboratories", "researches"
+  add_foreign_key "users", "laboratories"
 end
