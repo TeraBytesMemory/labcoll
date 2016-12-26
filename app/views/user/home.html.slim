@@ -1,8 +1,12 @@
 .container
   h5 ユーザ情報
   table
-    th メールアドレス
-    td @user.email
+    dl
+      dt メールアドレス
+      dd = @user.email
   h5 フォロー中の研究室
-
   h5 登録情報変更
+  form action="/users/edit" method="GET"
+    button.btn type="submit" 登録情報の変更
+
+  = link_to "ログアウト", destroy_user_session_path, :class => 'btn'

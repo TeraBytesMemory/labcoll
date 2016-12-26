@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get '/detail/:id', to: 'laboratory#detail'
 
+  get '/user', to: 'user#home'
+
   get '*path', controller: 'application', action: 'render_404'
 end
