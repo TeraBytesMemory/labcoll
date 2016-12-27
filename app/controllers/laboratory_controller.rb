@@ -1,7 +1,6 @@
 class LaboratoryController < ApplicationController
 
-  def index
-  end
+  before_action :authenticate_user!
 
   def detail
     @laboratory = Laboratory.find(params[:id])
