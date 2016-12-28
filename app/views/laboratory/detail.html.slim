@@ -6,6 +6,12 @@
       .center
         = image_tag @laboratory.imagePath, :width => 400
 
+      #follow_form
+        - if current_user.laboratory_followwing? @laboratory
+          = render "laboratory/unfollow"
+        - else
+          = render "laboratory/follow"
+
       h5 所属
       p = @laboratory.belong
       h5 研究室名

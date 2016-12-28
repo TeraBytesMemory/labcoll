@@ -6,7 +6,7 @@
       dd = @user.email
   h5 フォロー中の研究室
   - @user.laboratory_followwing.each do |laboratory|
-    a.btn href="/detail/#{laboratory.id}" = laboratory.office
+    a.btn href="/laboratory/#{laboratory.id}" = laboratory.office
   h5 登録情報変更
-  = link_to "登録情報の変更", "/users/edit", :class => 'btn'
+  = link_to "登録情報の変更", edit_user_registration_path, :class => 'btn'
   = link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'btn'
