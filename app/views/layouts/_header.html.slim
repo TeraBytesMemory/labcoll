@@ -2,6 +2,11 @@ nav
   .nav-wrapper
     .container
       a.brand-logo href="/" LabCollection
+      .right.hide-on-med-and-down
+        - if user_signed_in?
+          a href="/user" マイページ
+        - else
+          a href="/users/sign_in" ログイン
       a.button-collapse href="#" data-activates="mobile-nav"
         i.material-icons menu
 == render "layouts/mobile_nav"
