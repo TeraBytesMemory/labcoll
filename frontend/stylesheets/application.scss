@@ -34,6 +34,16 @@ html, body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .collapsible .active {
   background-color: color("yellow", "darken-1");
 }
