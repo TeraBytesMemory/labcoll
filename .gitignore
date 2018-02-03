@@ -13,7 +13,8 @@
 /tmp
 
 !/app/assets/javascripts/.keep
-#/app/assets/javascripts
+/app/assets/javascripts
 !/app/assets/stylesheets/.keep
-#/app/assets/stylesheets
+/app/assets/stylesheets
 /node_modules
+/db/seeds.sql

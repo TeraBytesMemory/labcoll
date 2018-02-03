@@ -23,6 +23,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'resonance'
+
 gem 'kaminari'
 
 # Use ActiveModel has_secure_password
